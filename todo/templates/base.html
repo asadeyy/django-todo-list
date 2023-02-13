@@ -1,0 +1,27 @@
+{% load static %}
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo</title>
+  {% block styles %}
+  {% endblock %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+  <nav class="my-navbar">
+    <a class="my-navbar-brand" href="{% url 'tasks.index' id=1 %}">Todo</a>
+  </nav>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+{% block scripts %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-offset-3 col-md-6">
+        <nav class="panel panel-default">
+          <div class="panel-heading">タスクを追加する</div>
+          <div class="panel-body">
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="text-right">
+                <button type="submit" class="btn btn-primary">送信</button>
+              </div>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </div>
+  <div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
+  <script>
+    flatpickr(document.getElementsByName('due_date'), {
+      locale: 'ja',
+      minDate: new Date()
+    });
+  </script>
+{% endblock %}

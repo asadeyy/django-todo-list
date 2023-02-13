@@ -1,0 +1,89 @@
+body {
+    background-color: #b4e7cf;
+  }
+
+  .navbar {
+    margin: 2rem 0 2.5rem 0;
+  }
+
+  .my-navbar {
+    align-items: center;
+    background: #474a2c;
+    display: flex;
+    height: 6rem;
+    justify-content: space-between;
+    padding: 0 2%;
+    margin-bottom: 3rem;
+  }
+
+  .my-navbar-brand {
+    font-size: 20px;
+  }
+
+  .my-navbar-brand,
+  .my-navbar-item {
+    color: #b4e7cf;
+  }
+
+  .my-navbar-brand:hover,
+  a.my-navbar-item:hover {
+    color: #ffffff;
+  }
+
+  .panel-default>.panel-heading {
+    color: #474a2c;
+    background-color: #9bdeac;
+    border-color: #e6e9ed;
+}
+
+a.list-group-item:hover {
+  color: #fff;
+  background-color: #474a;
+}
+
+a.list-group-item.active,
+a.list-group-item.active:focus,
+a.list-group-item.active:hover{
+  color: #fff;
+  background-color: #474a;
+  border-color: #e6e9ed;
+}
+
+a {
+  color: #474a;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #4909;
+}
+
+.btn-default:hover {
+  color: #fff;
+  background-color: #474a;
+}
+
+.btn{
+  border-color: #474a;
+}
+
+.btn-primary {
+  background-color: #474a;
+  border-color: #474a;
+}
+
+.btn-primary:hover {
+  background-color: #4909;
+}
+
+  .table td:nth-child(2),
+  .table td:nth-child(3),
+  .table td:nth-child(4) {
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .form-control[disabled],
+  .form-control[readonly] {
+    background-color: #fff;
+  }

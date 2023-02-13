@@ -1,0 +1,24 @@
+# ymlファイルのバージョン指定
+version: '3'
+# コンテナを定義
+services:
+    web:
+        # Dockerfileをビルド
+        build: .
+        command: python3 manage.py runserver 0.0.0.0:8000
+        # マウント場所の指定
+        volumes:
+            - .:/code
+        ports:
+            - "8000:8000"
+        # dbサービスが立ち上がってから起動するように指定
+        depends_on:
+            - db
+    db:
+        image: postgres
+        ports: 
+            - "5432"
+        environment:
+          - POSTGRES_DB=postgres
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
