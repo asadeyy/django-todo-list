@@ -56,3 +56,6 @@ def edit_task(request, id, task_id):
     else:
         form = TaskForm(instance=task)
     return render(request, 'edit.html', {'form': form, 'task':task})
+
+def go_index(request):
+    return redirect('tasks.index', id=1)
