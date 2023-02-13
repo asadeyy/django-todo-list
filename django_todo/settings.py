@@ -26,10 +26,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", default='!(#v$%oyqe+4zd=o9a_ob*uvpj!q7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -52,8 +49,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'django_todo.urls'
@@ -80,21 +75,16 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if DEBUG:
-     DATABASES = {
-         "default": {
-             "ENGINE": "django.db.backends.postgresql",
-             "NAME": "postgres",
-             "USER": "root",
-             "PASSWORD": "password",
-             "HOST": "db",
-             "PORT": 5432,
-         }
-     }
-else:
-    DATABASES = {
-        "default": dj_database_url.config()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
+}
 
 STATIC_URL = "/static/"
 if not DEBUG: # if False 
