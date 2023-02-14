@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-4">
+        <nav class="panel panel-default">
+          <div class="panel-body">
+            <a href="{% url 'folders.create' %}" class="btn btn-default btn-block">
+              フォルダーを追加する
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+{% endblock %}
