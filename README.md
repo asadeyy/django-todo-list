@@ -8,4 +8,5 @@ https://qiita.com/takos/items/b9ba0b60c6f71b428aac<br>
 ## renderにデプロイした分<br>
 https://django-todo-list-01z6.onrender.com/<br>
 接続に時間がかかる<br>
-2/13~90日間アクセス可能
+2/13~90日間アクセス可能<br>
+タスクの一覧を見る時->https://django-todo-list-01z6.onrender.com/folders/1/tasks
